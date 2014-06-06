@@ -66,7 +66,7 @@ class TimeAgo
     else if @options.maxRelative and @options.maxRelative <= dis
       @options.absoluteDate(absolutTime, timeString)
     else
-      "#{@options.lang.prefixes.ago}#{@distanceOfTimeInWords(dis)}#{@options.suffix or @options.lang.suffix}"
+      @options.relativeDate(@options.lang.prefixes.ago, @distanceOfTimeInWords(dis), (@options.suffix or @options.lang.suffix))
 
   parse: (iso8601) ->
     timeStr = $.trim(iso8601)
@@ -143,6 +143,8 @@ $.fn.timeago.defaults =
   showNow: false
   maxRelative: false
   absoluteDate: (date, datetime) -> datetime
+  relativeDate: (prefix, distance, suffix) ->
+    "#{prefix}#{distance}#{suffix}"
   lang:
     units:
       second: "second"
