@@ -26,7 +26,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git://github.com/pragmaticly/smart-time-ago.git"
+        "url": "git://github.com/enovatedesign/smart-time-ago.git"
     },
     "bugs": "https://github.com/pragmaticly/smart-time-ago/issues",
     "licenses": [
